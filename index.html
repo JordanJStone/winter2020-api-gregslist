@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style/main.css">
-    <title>mvc-gregslist</title>
+    <title>API-gregslist</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <nav class="navbar navbar-dark navbar-expand bg-primary text-light">
             <a class="navbar-brand" href="#">
                 <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">mvc-gregslist</span>
+                <span class="ml-2">API-gregslist</span>
             </a>
         </nav>
     </header>
@@ -58,8 +58,54 @@
             </div>
         </div>
         <div class="row" id="cars">
-            test change
         </div>
+
+        <hr style="height:30px">
+
+
+
+
+        <div class="row mt-2">
+            <div class="col text-right">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                    data-target="#new-house-modal">+</button>
+                <!-- Modal -->
+                <div class="modal fade" id="new-house-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">NEW House FORM</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form onsubmit="app.housesController.createHouse()">
+                                    <input type="number" id="bedrooms" placeholder="bedrooms" required>
+                                    <input type="number" id="bathrooms" placeholder="bathrooms" required>
+                                    <input type="number" id="levels" placeholder="levels" required min="1" value="1">
+                                    <input type="number" id="year" placeholder="year" required min="1">
+                                    <input type="number" id="price" placeholder="price" required>
+                                    <input type="text" id="imgUrl" placeholder="Image Url">
+                                    <input type="text" id="description" placeholder="description">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="houses">
+
+
+
     </main>
     <footer class="container-fluid bg-dark text-light">
         <div class="row text-center" onclick="app.carsController.getOne()">
